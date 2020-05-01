@@ -16,7 +16,7 @@ public class Test {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
         driver.navigate().to("https://hamwaves.com/collaboration/doc/rypress.com/index.html");
-        System.out.println("Browser title is " + driver.getTitle());
+        System.out.println("Browser title is: " + driver.getTitle());
         driver.quit();
     }
 }
