@@ -10,7 +10,7 @@ public class Test {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-
+        options.addArguments("--headless");
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
         driver.navigate().to("https://hamwaves.com/collaboration/doc/rypress.com/index.html");
