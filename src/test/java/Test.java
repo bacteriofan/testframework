@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Test {
@@ -15,6 +16,8 @@ public class Test {
         options.addArguments("--headless");
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
+        System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(options);
 
@@ -26,7 +29,7 @@ public class Test {
         driver.findElement(By.xpath("//a[text()[contains(.,'Introduction to HTML')]]")).click();
         String header = driver.findElement(By.cssSelector(".title")).getText();
 
-        System.out.println("Opened page:" + header);
+        System.out.println("Title on opened page: " + header);
 
         driver.quit();
     }
