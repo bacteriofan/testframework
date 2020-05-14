@@ -1,10 +1,12 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
 
 public class Test {
 
@@ -15,6 +17,10 @@ public class Test {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+
+        options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR,
+                UnexpectedAlertBehaviour.IGNORE);
+
 
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
