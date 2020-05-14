@@ -30,6 +30,7 @@ public class Test {
         String header = driver.findElement(By.cssSelector(".title")).getText();
 
         System.out.println("Title on opened page: " + header);
+        //test
 
         driver.quit();
     }
