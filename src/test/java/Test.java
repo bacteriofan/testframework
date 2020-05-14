@@ -31,6 +31,7 @@ public class Test {
 
         System.out.println("Title on opened page: " + header);
         //test
+        //test2
 
         driver.quit();
     }
